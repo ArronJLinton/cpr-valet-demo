@@ -2631,11 +2631,143 @@ _**Assistant (default)**_
 
 Tool use: **run_terminal_cmd**
 
+```bash
+cd /Users/arronlinton/Desktop/MagistriDev/cpr/trash-valet-demo && git add .
+```
+
 ---
 
 
 
+---
 
+Tool use: **run_terminal_cmd**
+
+```bash
+git commit -m "feat: implement employee dashboard layout with stacked buttons
+
+- Create employee dashboard with mock data and TypeScript interfaces
+- Add clock in/out, media upload, and violation reporting components
+- Stack Quick Actions buttons vertically for better mobile UX
+- Remove bottom tab navigation, make dashboard the home screen
+- Disable Create Report button functionality
+- Fix import paths and add missing useColorScheme component
+- Clean, modern UI following wireframe design with green accents"
+```
+
+```
+[employee-dashboard 84426b7] feat: implement employee dashboard layout with stacked buttons                                                                     
+ 13 files changed, 3498 insertions(+), 126 deletions(-)
+ create mode 100644 .specstory/history/2025-10-22_16-39Z-build-layout-for-employee-dashboard-demo.md                                                            
+ delete mode 100644 app/(tabs)/_layout.tsx
+ delete mode 100644 app/(tabs)/index.tsx
+ delete mode 100644 app/(tabs)/two.tsx
+ create mode 100644 app/index.tsx
+ create mode 100644 src/components/ClockInOut/ClockInOutButton.tsx
+ create mode 100644 src/components/Dashboard/EmployeeDashboard.tsx
+ create mode 100644 src/components/MediaUpload/CameraButton.tsx
+ create mode 100644 src/components/ViolationForm/ViolationForm.tsx
+ create mode 100644 src/constants/mockData.ts
+ create mode 100644 src/types/index.ts
+```
+
+---
+
+Perfect! The commit has been successfully created. Here's a summary of what was committed:
+
+## ✅ Commit Summary:
+
+**Commit Hash**: `84426b7`  
+**Message**: "feat: implement employee dashboard layout with stacked buttons"
+
+### **Files Changed**: 13 files
+- **3,498 insertions**, 126 deletions
+
+### **Key Changes**:
+- ✅ **Created employee dashboard** with complete layout and mock data
+- ✅ **Added TypeScript interfaces** for all data models
+- ✅ **Implemented component placeholders** for clock in/out, media upload, and violation reporting
+- ✅ **Stacked Quick Actions buttons** vertically for better mobile UX
+- ✅ **Removed tab navigation** - dashboard is now the home screen
+- ✅ **Disabled Create Report button** as requested
+- ✅ **Fixed import issues** and added missing components
+- ✅ **Clean, modern UI** following the wireframe design
+
+### **New Files Created**:
+- `app/index.tsx` - Main home screen
+- `src/components/Dashboard/EmployeeDashboard.tsx` - Main dashboard component
+- `src/components/ClockInOut/ClockInOutButton.tsx` - Clock in/out button
+- `src/components/MediaUpload/CameraButton.tsx` - Media upload button
+- `src/components/ViolationForm/ViolationForm.tsx` - Violation reporting form
+- `src/constants/mockData.ts` - Mock data for demo
+- `src/types/index.ts` - TypeScript interfaces
+
+The employee dashboard demo is now ready and committed! 🎉
+
+---
+
+_**User (2025-10-22 17:47Z)**_
+
+I''m receiving the attached error message any time I run 
+
+eas update --auto 
+
+
+
+---
+
+_**Assistant (default)**_
+
+The error is in your `eas.json` configuration file. The `buildType` value is invalid. Let me check and fix the EAS configuration:
+
+
+---
+
+Tool use: **read_file**
+
+Read file: /Users/arronlinton/Desktop/MagistriDev/cpr/trash-valet-demo/eas.json
+
+---
+
+I can see the issue. The `buildType` value `"aab"` is invalid. It should be `"app-bundle"` for production Android builds. Let me fix this:
+
+
+---
+
+Tool use: **search_replace**
+
+
+<details><summary>Edit file: /Users/arronlinton/Desktop/MagistriDev/cpr/trash-valet-demo/eas.json</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -30,5 +30,5 @@
+        },
+        "android": {
+-         "buildType": "aab"
++         "buildType": "app-bundle"
+        }
+      }
+```
+
+</details>
+
+---
+
+Perfect! I've fixed the EAS configuration. The issue was that `"buildType": "aab"` is not a valid value. The correct value for production Android builds is `"app-bundle"`.
+
+## ✅ Fixed EAS Configuration:
+
+**Problem**: `"buildType": "aab"` is invalid  
+**Solution**: Changed to `"buildType": "app-bundle"`
+
+The valid values for `buildType` are:
+- `"apk"` - for development/preview builds
+- `"app-bundle"` - for production builds (Google Play Store)
+
+Now you should be able to run `eas update --auto` without the validation error.
 
 ---
 
