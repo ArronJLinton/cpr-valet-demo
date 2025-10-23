@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     marginBottom: 10,
-    width: 315,
+    width: '100%',
   },
   continueButtonText: {
     color: 'white',
