@@ -17,14 +17,20 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    name: 'Dashboard',
+    name: 'Home',
     route: '/',
     icon: 'home',
+    label: 'Home',
+  },
+  {
+    name: 'Dashboard',
+    route: '/dashboard',
+    icon: 'grid',
     label: 'Dashboard',
   },
   {
     name: 'Time Tracking',
-    route: '/',
+    route: '/time-tracking',
     icon: 'time',
     label: 'Time Tracking',
   },
@@ -33,12 +39,6 @@ const navItems: NavItem[] = [
     route: '/report-issue',
     icon: 'warning',
     label: 'Report Issue',
-  },
-  {
-    name: 'Modal',
-    route: '/modal',
-    icon: 'menu',
-    label: 'Modal',
   },
 ];
 
