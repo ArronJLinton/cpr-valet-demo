@@ -8,6 +8,7 @@ import {
     Text,
     View,
 } from 'react-native';
+
 import { ClockInOutButton } from '../src/components/ClockInOut/ClockInOutButton';
 import { mockDashboardData } from '../src/constants/mockData';
 
