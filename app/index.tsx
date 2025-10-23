@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   illustration: {
-    width: 800,
-    height: 400,
+    width: '80%',
+    aspectRatio: 2, // maintains 2:1 ratio (was 800:400)
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
