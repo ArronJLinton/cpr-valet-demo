@@ -1,17 +1,16 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 import { mockDashboardData } from '../../constants/mockData';
 import { DashboardData } from '../../types';
-import { ClockInOutButton } from '../ClockInOut/ClockInOutButton';
 import { CameraButton } from '../MediaUpload/CameraButton';
 import { ViolationForm } from '../ViolationForm/ViolationForm';
 
@@ -23,12 +22,7 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
   data = mockDashboardData,
 }) => {
   const [showViolationForm, setShowViolationForm] = useState(false);
-  const { employee, assignedProperties, currentTimeEntry } = data;
-
-  const handleClockInOut = () => {
-    // Placeholder for clock in/out functionality
-    console.log('Clock in/out placeholder');
-  };
+  const { employee, assignedProperties } = data;
 
   const handleMediaUpload = () => {
     // Placeholder for media upload functionality
@@ -84,18 +78,6 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
           </View>
         </View>
 
-        {/* Clock In/Out Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Time Tracking</Text>
-          <View style={styles.clockInOutContainer}>
-            <ClockInOutButton timeEntry={currentTimeEntry} onPress={handleClockInOut} />
-            {currentTimeEntry?.isClockedIn && (
-              <Text style={styles.clockInTime}>
-                Clocked in at {currentTimeEntry.clockInTime?.toLocaleTimeString()}
-              </Text>
-            )}
-          </View>
-        </View>
 
         {/* Assigned Properties */}
         <View style={styles.section}>
