@@ -39,9 +39,6 @@ export default function WelcomeScreen() {
         <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
           <Text style={styles.continueButtonText}>Continue</Text>
         </TouchableOpacity>
-
-        {/* Footer */}
-        <Text style={styles.footer}>Powered by CPA</Text>
       </View>
     </SafeAreaView>
   );
@@ -59,19 +56,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 28,
+    fontSize: 36,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
-    lineHeight: 36,
-    marginBottom: 40,
+    lineHeight: 44,
+    marginBottom: 20,
   },
   illustration: {
-    width: 200,
-    height: 150,
+    width: 800,
+    height: 400,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 20,
   },
   illustrationImage: {
     width: '100%',
@@ -80,7 +77,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: 20,
+    marginBottom: 15,
     gap: 15,
     width: '100%',
   },
@@ -116,18 +113,12 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 8,
     alignItems: 'center',
-    marginBottom: 20,
-    width: '100%',
+    marginBottom: 10,
+    width: 315,
   },
   continueButtonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  footer: {
-    color: 'white',
-    fontSize: 12,
-    textAlign: 'center',
-    marginBottom: 20,
   },
 });
