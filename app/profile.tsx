@@ -52,9 +52,7 @@ export default function ProfileScreen() {
         <View style={styles.profilePictureContainer}>
           <View style={styles.profilePictureCircle}>
             <Image
-              source={{
-                uri: 'https://via.placeholder.com/150/4CAF50/FFFFFF?text=MT',
-              }}
+              source={require('../assets/images/profile_pic.jpg')}
               style={styles.profilePicture}
             />
           </View>
