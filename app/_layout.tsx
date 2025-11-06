@@ -63,6 +63,7 @@ function RootLayoutNav() {
         <Stack.Screen name='report-issue' options={{ headerShown: false }} />
         <Stack.Screen name='daily-work-plan' options={{ headerShown: false }} />
         <Stack.Screen name='property-details' options={{ headerShown: false }} />
+        <Stack.Screen name='explore-property' options={{ headerShown: false }} />
         <Stack.Screen name='profile' options={{ headerShown: false }} />
       </Stack>
       {showNavbar && <GlobalNavbar />}
