@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import { mockProperties } from '../src/constants/mockData';
+import { PRIMARY_RED, BLACK, WHITE, TEXT_GRAY, BORDER_GRAY, CHARCOAL_GRAY } from '../constants/Colors';
 
 const getPropertyIcon = (index: number): keyof typeof Ionicons.glyphMap => {
   const icons: (keyof typeof Ionicons.glyphMap)[] = [
@@ -22,7 +23,7 @@ const getPropertyIcon = (index: number): keyof typeof Ionicons.glyphMap => {
 };
 
 const getPropertyIconColor = (index: number): string => {
-  const colors = ['#87CEEB', '#4CAF50', '#4CAF50'];
+  const colors = [PRIMARY_RED, PRIMARY_RED, PRIMARY_RED];
   return colors[index % colors.length];
 };
 
@@ -42,7 +43,7 @@ export default function DailyWorkPlanScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      <StatusBar barStyle="light-content" backgroundColor={BLACK} />
       
       {/* Header */}
       <View style={styles.header}>
@@ -50,7 +51,7 @@ export default function DailyWorkPlanScreen() {
           style={styles.backButton}
           onPress={handleBackPress}
         >
-          <Ionicons name="chevron-back" size={24} color="#000" />
+          <Ionicons name="chevron-back" size={24} color={WHITE} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Daily Work Plan</Text>
         <View style={styles.headerSpacer} />
@@ -63,7 +64,7 @@ export default function DailyWorkPlanScreen() {
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Assigned</Text>
             <View style={styles.sectionHeaderRight}>
-              <Ionicons name="checkmark-circle-outline" size={20} color="#666" />
+              <Ionicons name="checkmark-circle-outline" size={20} color={TEXT_GRAY} />
               <View style={styles.verticalDivider} />
             </View>
           </View>
@@ -91,7 +92,7 @@ export default function DailyWorkPlanScreen() {
                 <Ionicons
                   name="chevron-forward"
                   size={20}
-                  color="#999"
+                  color={TEXT_GRAY}
                 />
               </TouchableOpacity>
             ))}
@@ -105,7 +106,7 @@ export default function DailyWorkPlanScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
   },
   header: {
     flexDirection: 'row',
@@ -114,7 +115,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: BORDER_GRAY,
+    backgroundColor: BLACK,
   },
   backButton: {
     padding: 4,
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: WHITE,
   },
   headerSpacer: {
     width: 32,
@@ -144,7 +146,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: BLACK,
   },
   sectionHeaderRight: {
     flexDirection: 'row',
@@ -153,7 +155,7 @@ const styles = StyleSheet.create({
   verticalDivider: {
     width: 1,
     height: 20,
-    backgroundColor: '#e0e0e0',
+    backgroundColor: BORDER_GRAY,
     marginLeft: 8,
   },
   propertyList: {
@@ -162,12 +164,12 @@ const styles = StyleSheet.create({
   propertyCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
     borderRadius: 12,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
-    shadowColor: '#000',
+    borderColor: BORDER_GRAY,
+    shadowColor: BLACK,
     shadowOffset: {
       width: 0,
       height: 1,
@@ -185,12 +187,12 @@ const styles = StyleSheet.create({
   propertyName: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#000',
+    color: BLACK,
     marginBottom: 4,
   },
   propertySubtext: {
     fontSize: 14,
-    color: '#666',
+    color: TEXT_GRAY,
   },
 });
 

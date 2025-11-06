@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import { PRIMARY_RED, BLACK, WHITE, TEXT_GRAY } from '../constants/Colors';
 
 interface NavItem {
   name: string;
@@ -76,7 +77,7 @@ export const GlobalNavbar: React.FC = () => {
               <Ionicons
                 name={item.icon}
                 size={24}
-                color={isActive ? '#4CAF50' : '#666666'}
+                color={isActive ? PRIMARY_RED : TEXT_GRAY}
               />
               <Text
                 style={[
@@ -96,9 +97,9 @@ export const GlobalNavbar: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ffffff',
+    backgroundColor: BLACK,
     borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
+    borderTopColor: '#333333',
   },
   navbar: {
     flexDirection: 'row',
@@ -114,16 +115,16 @@ const styles = StyleSheet.create({
     minWidth: 80,
   },
   activeNavItem: {
-    backgroundColor: '#f0f8f0',
+    backgroundColor: '#1a1a1a',
   },
   navLabel: {
     fontSize: 12,
-    color: '#666666',
+    color: TEXT_GRAY,
     marginTop: 4,
     textAlign: 'center',
   },
   activeNavLabel: {
-    color: '#4CAF50',
+    color: PRIMARY_RED,
     fontWeight: '600',
   },
 });

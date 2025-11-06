@@ -1,6 +1,7 @@
 import { router } from 'expo-router';
 import React from 'react';
 import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { PRIMARY_RED, BLACK, WHITE, CHARCOAL_GRAY } from '../constants/Colors';
 
 export default function WelcomeScreen() {
   const handleContinue = () => {
@@ -47,7 +48,7 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a237e', // Dark blue background
+    backgroundColor: WHITE,
   },
   content: {
     flex: 1,
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: 'white',
+    color: BLACK,
     textAlign: 'center',
     lineHeight: 44,
     marginBottom: 20,
@@ -83,33 +84,33 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: PRIMARY_RED,
     paddingVertical: 15,
     borderRadius: 8,
     alignItems: 'center',
     maxWidth: 150,
   },
   loginButtonText: {
-    color: 'black',
+    color: WHITE,
     fontSize: 16,
     fontWeight: 'bold',
   },
   createAccountButton: {
     flex: 1,
     borderWidth: 2,
-    borderColor: '#4caf50',
+    borderColor: PRIMARY_RED,
     paddingVertical: 15,
     borderRadius: 8,
     alignItems: 'center',
     maxWidth: 150,
   },
   createAccountButtonText: {
-    color: 'white',
+    color: PRIMARY_RED,
     fontSize: 16,
     fontWeight: 'bold',
   },
   continueButton: {
-    backgroundColor: '#4caf50',
+    backgroundColor: PRIMARY_RED,
     paddingVertical: 15,
     borderRadius: 8,
     alignItems: 'center',
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   continueButtonText: {
-    color: 'white',
+    color: WHITE,
     fontSize: 16,
     fontWeight: 'bold',
   },

@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { PRIMARY_RED, BLACK, WHITE, TEXT_GRAY, BORDER_GRAY } from '../constants/Colors';
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function ProfileScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      <StatusBar barStyle="light-content" backgroundColor={BLACK} />
 
       {/* Header */}
       <View style={styles.header}>
@@ -40,7 +41,7 @@ export default function ProfileScreen() {
           style={styles.backButtonIcon}
           onPress={handleBackPress}
         >
-          <Ionicons name="chevron-back" size={24} color="#000" />
+          <Ionicons name="chevron-back" size={24} color={BLACK} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Profile</Text>
         <View style={styles.headerSpacer} />
@@ -77,7 +78,7 @@ export default function ProfileScreen() {
             onPress={handlePrivacyPolicy}
           >
             <Text style={styles.menuItemText}>Privacy Policy</Text>
-            <Ionicons name="chevron-forward" size={20} color="#000" />
+            <Ionicons name="chevron-forward" size={20} color={BLACK} />
           </TouchableOpacity>
           <View style={styles.separator} />
 
@@ -86,7 +87,7 @@ export default function ProfileScreen() {
             onPress={handleTermsConditions}
           >
             <Text style={styles.menuItemText}>Terms & Conditions</Text>
-            <Ionicons name="chevron-forward" size={20} color="#000" />
+            <Ionicons name="chevron-forward" size={20} color={BLACK} />
           </TouchableOpacity>
         </View>
       </View>
@@ -97,7 +98,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
   },
   header: {
     flexDirection: 'row',
@@ -106,7 +107,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: BORDER_GRAY,
+    backgroundColor: BLACK,
   },
   backButtonIcon: {
     padding: 4,
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: WHITE,
   },
   headerSpacer: {
     width: 32,
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
@@ -144,12 +146,12 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#000',
+    color: BLACK,
     marginBottom: 4,
   },
   role: {
     fontSize: 16,
-    color: '#666',
+    color: TEXT_GRAY,
     marginBottom: 40,
   },
   menuContainer: {
@@ -164,11 +166,11 @@ const styles = StyleSheet.create({
   },
   menuItemText: {
     fontSize: 16,
-    color: '#000',
+    color: BLACK,
   },
   separator: {
     height: 1,
-    backgroundColor: '#e0e0e0',
+    backgroundColor: BORDER_GRAY,
   },
 });
 

@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { PRIMARY_RED, BLACK, WHITE } from '../../../constants/Colors';
 
 interface CameraButtonProps {
   onPress: () => void;
@@ -43,7 +44,7 @@ export const CameraButton: React.FC<CameraButtonProps> = ({
       activeOpacity={0.8}
     >
       <View style={styles.buttonContent}>
-        <Ionicons name={getIconName()} size={24} color='#4CAF50' style={styles.icon} />
+        <Ionicons name={getIconName()} size={24} color={PRIMARY_RED} style={styles.icon} />
         <Text style={styles.buttonText}>{getButtonText()}</Text>
       </View>
     </TouchableOpacity>
@@ -52,16 +53,16 @@ export const CameraButton: React.FC<CameraButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
     borderRadius: 12,
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderWidth: 2,
-    borderColor: '#4CAF50',
+    borderColor: PRIMARY_RED,
     borderStyle: 'dashed',
     minHeight: 60,
     elevation: 1,
-    shadowColor: '#000',
+    shadowColor: BLACK,
     shadowOffset: {
       width: 0,
       height: 1,
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   buttonText: {
-    color: '#4CAF50',
+    color: PRIMARY_RED,
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',

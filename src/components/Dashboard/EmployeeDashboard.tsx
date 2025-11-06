@@ -13,6 +13,7 @@ import { mockDashboardData } from '../../constants/mockData';
 import { DashboardData } from '../../types';
 import { CameraButton } from '../MediaUpload/CameraButton';
 import { ViolationForm } from '../ViolationForm/ViolationForm';
+import { PRIMARY_RED, BLACK, WHITE, TEXT_GRAY, BORDER_GRAY, LIGHT_GRAY, CHARCOAL_GRAY } from '../../../constants/Colors';
 
 interface EmployeeDashboardProps {
   data?: DashboardData;
@@ -51,14 +52,14 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle='dark-content' backgroundColor='#ffffff' />
+      <StatusBar barStyle='dark-content' backgroundColor={WHITE} />
 
       {/* Header */}
       {/* <View style={styles.header}>
         <View style={styles.headerTop}>
           <Text style={styles.timeText}>4:19</Text>
           <View style={styles.batteryContainer}>
-            <Ionicons name='battery-full' size={20} color='#333333' />
+            <Ionicons name='battery-full' size={20} color={CHARCOAL_GRAY} />
           </View>
         </View>
         <Text style={styles.headerTitle}>Daily Work Plan</Text>
@@ -69,7 +70,7 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
         <View style={styles.employeeSection}>
           <View style={styles.employeeInfo}>
             <View style={styles.profileImage}>
-              <Ionicons name='person' size={40} color='#4CAF50' />
+              <Ionicons name='person' size={40} color={PRIMARY_RED} />
             </View>
             <View style={styles.employeeDetails}>
               <Text style={styles.employeeName}>{employee.name}</Text>
@@ -85,13 +86,13 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
           {assignedProperties.map(property => (
             <TouchableOpacity key={property.id} style={styles.propertyCard}>
               <View style={styles.propertyInfo}>
-                <Ionicons name='location' size={20} color='#4CAF50' />
+                <Ionicons name='location' size={20} color={PRIMARY_RED} />
                 <View style={styles.propertyDetails}>
                   <Text style={styles.propertyName}>{property.name}</Text>
                   <Text style={styles.propertyAddress}>{property.address}</Text>
                 </View>
               </View>
-              <Ionicons name='chevron-forward' size={20} color='#666666' />
+              <Ionicons name='chevron-forward' size={20} color={TEXT_GRAY} />
             </TouchableOpacity>
           ))}
         </View>
@@ -107,7 +108,7 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
               // onPress={() => setShowViolationForm(true)}
             >
               <View style={styles.violationButtonContent}>
-                <Ionicons name='warning' size={24} color='#ffffff' />
+                <Ionicons name='warning' size={24} color={WHITE} />
                 <Text style={styles.violationButtonText}>Create Report</Text>
               </View>
             </TouchableOpacity>
@@ -119,7 +120,7 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
           <Text style={styles.sectionTitle}>Recent Activity</Text>
           <View style={styles.activityCard}>
             <View style={styles.activityItem}>
-              <Ionicons name='camera' size={20} color='#4CAF50' />
+              <Ionicons name='camera' size={20} color={PRIMARY_RED} />
               <Text style={styles.activityText}>Photo uploaded at Acme Apartments</Text>
               <Text style={styles.activityTime}>2 hours ago</Text>
             </View>
@@ -138,15 +139,15 @@ export const EmployeeDashboard: React.FC<EmployeeDashboardProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
   },
   header: {
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
     paddingHorizontal: 20,
     paddingTop: 10,
     paddingBottom: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: BORDER_GRAY,
   },
   headerTop: {
     flexDirection: 'row',
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
   timeText: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
   },
   batteryContainer: {
     flexDirection: 'row',
@@ -166,14 +167,14 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
   },
   content: {
     flex: 1,
   },
   employeeSection: {
     padding: 20,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: LIGHT_GRAY,
   },
   employeeInfo: {
     flexDirection: 'row',
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#e8f5e8',
+    backgroundColor: '#ffe8e8',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 16,
@@ -194,22 +195,22 @@ const styles = StyleSheet.create({
   employeeName: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
     marginBottom: 4,
   },
   employeeRole: {
     fontSize: 16,
-    color: '#666666',
+    color: TEXT_GRAY,
   },
   section: {
     padding: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: BORDER_GRAY,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
     marginBottom: 16,
   },
   clockInOutContainer: {
@@ -218,14 +219,14 @@ const styles = StyleSheet.create({
   clockInTime: {
     marginTop: 12,
     fontSize: 14,
-    color: '#4CAF50',
+    color: PRIMARY_RED,
     fontWeight: '500',
   },
   propertyCard: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#f8f9fa',
+    backgroundColor: LIGHT_GRAY,
     padding: 16,
     borderRadius: 12,
     marginBottom: 12,
@@ -242,12 +243,12 @@ const styles = StyleSheet.create({
   propertyName: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
     marginBottom: 4,
   },
   propertyAddress: {
     fontSize: 14,
-    color: '#666666',
+    color: TEXT_GRAY,
   },
   actionsContainer: {
     flexDirection: 'column',
@@ -258,12 +259,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   violationButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
     borderRadius: 12,
     paddingVertical: 16,
     paddingHorizontal: 24,
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: BLACK,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -279,13 +280,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   violationButtonText: {
-    color: '#ffffff',
+    color: WHITE,
     fontSize: 16,
     fontWeight: '600',
     marginLeft: 8,
   },
   activityCard: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 12,
     padding: 16,
   },
@@ -297,11 +298,11 @@ const styles = StyleSheet.create({
   activityText: {
     flex: 1,
     fontSize: 14,
-    color: '#333333',
+    color: CHARCOAL_GRAY,
     marginLeft: 12,
   },
   activityTime: {
     fontSize: 12,
-    color: '#666666',
+    color: TEXT_GRAY,
   },
 });
