@@ -46,6 +46,12 @@ const navItems: NavItem[] = [
     icon: 'calendar',
     label: 'Work Plan',
   },
+  {
+    name: 'Profile',
+    route: '/profile',
+    icon: 'person',
+    label: 'Profile',
+  },
 ];
 
 export const GlobalNavbar: React.FC = () => {
