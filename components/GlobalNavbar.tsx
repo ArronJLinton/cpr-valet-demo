@@ -40,6 +40,12 @@ const navItems: NavItem[] = [
     icon: 'warning',
     label: 'Report Issue',
   },
+  {
+    name: 'Daily Work Plan',
+    route: '/daily-work-plan',
+    icon: 'calendar',
+    label: 'Work Plan',
+  },
 ];
 
 export const GlobalNavbar: React.FC = () => {

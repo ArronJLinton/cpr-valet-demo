@@ -61,6 +61,8 @@ function RootLayoutNav() {
         <Stack.Screen name='time-tracking' options={{ headerShown: false }} />
         <Stack.Screen name='modal' options={{ presentation: 'modal' }} />
         <Stack.Screen name='report-issue' options={{ headerShown: false }} />
+        <Stack.Screen name='daily-work-plan' options={{ headerShown: false }} />
+        <Stack.Screen name='property-details' options={{ headerShown: false }} />
       </Stack>
       {showNavbar && <GlobalNavbar />}
     </ThemeProvider>
