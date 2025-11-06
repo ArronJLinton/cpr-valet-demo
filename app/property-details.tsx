@@ -90,17 +90,6 @@ export default function PropertyDetailsScreen() {
               <Text style={styles.infoValue}>{property.address}</Text>
             </View>
           </View>
-
-          <View style={styles.infoRow}>
-            <Ionicons name="map" size={20} color="#4CAF50" />
-            <View style={styles.infoTextContainer}>
-              <Text style={styles.infoLabel}>Coordinates</Text>
-              <Text style={styles.infoValue}>
-                {property.location.latitude.toFixed(4)},{' '}
-                {property.location.longitude.toFixed(4)}
-              </Text>
-            </View>
-          </View>
         </View>
 
         {/* Recent Uploads Section */}
@@ -217,7 +206,6 @@ const styles = StyleSheet.create({
   infoRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginBottom: 16,
   },
   infoTextContainer: {
     marginLeft: 12,
