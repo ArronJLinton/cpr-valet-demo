@@ -48,6 +48,12 @@ const navItems: NavItem[] = [
     label: 'Work Plan',
   },
   {
+    name: 'Explore Property',
+    route: '/explore-property',
+    icon: 'search',
+    label: 'Explore',
+  },
+  {
     name: 'Profile',
     route: '/profile',
     icon: 'person',
