@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   createReportButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
     borderRadius: 8,
     paddingVertical: 14,
     alignItems: 'center',
