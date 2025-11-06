@@ -15,6 +15,7 @@ import {
   mockProperties,
   mockViolationReports,
 } from '../src/constants/mockData';
+import { PRIMARY_RED, BLACK, WHITE, TEXT_GRAY, BORDER_GRAY, LIGHT_GRAY, CHARCOAL_GRAY } from '../constants/Colors';
 
 export default function PropertyDetailsScreen() {
   const router = useRouter();
@@ -65,7 +66,7 @@ export default function PropertyDetailsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      <StatusBar barStyle="light-content" backgroundColor={BLACK} />
 
       {/* Header */}
       <View style={styles.header}>
@@ -73,7 +74,7 @@ export default function PropertyDetailsScreen() {
           style={styles.backButtonIcon}
           onPress={handleBackPress}
         >
-          <Ionicons name="chevron-back" size={24} color="#000" />
+          <Ionicons name="chevron-back" size={24} color={WHITE} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{property.name}</Text>
         <View style={styles.headerSpacer} />
@@ -84,7 +85,7 @@ export default function PropertyDetailsScreen() {
         {/* Property Info Card */}
         <View style={styles.infoCard}>
           <View style={styles.infoRow}>
-            <Ionicons name="location" size={20} color="#4CAF50" />
+            <Ionicons name="location" size={20} color={PRIMARY_RED} />
             <View style={styles.infoTextContainer}>
               <Text style={styles.infoLabel}>Address</Text>
               <Text style={styles.infoValue}>{property.address}</Text>
@@ -103,7 +104,7 @@ export default function PropertyDetailsScreen() {
                     <Ionicons
                       name={upload.type === 'photo' ? 'image' : 'videocam'}
                       size={20}
-                      color={upload.type === 'photo' ? '#4CAF50' : '#FF9800'}
+                      color={upload.type === 'photo' ? PRIMARY_RED : '#FF9800'}
                     />
                     <Text style={styles.uploadType}>
                       {upload.type.charAt(0).toUpperCase() +
@@ -140,7 +141,7 @@ export default function PropertyDetailsScreen() {
                 </Text>
                 {violation.mediaIds.length > 0 && (
                   <View style={styles.mediaIndicator}>
-                    <Ionicons name="images" size={16} color="#666" />
+                    <Ionicons name="images" size={16} color={TEXT_GRAY} />
                     <Text style={styles.mediaCount}>
                       {violation.mediaIds.length} media file(s)
                     </Text>
@@ -168,7 +169,7 @@ export default function PropertyDetailsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
   },
   header: {
     flexDirection: 'row',
@@ -177,7 +178,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: BORDER_GRAY,
+    backgroundColor: BLACK,
   },
   backButtonIcon: {
     padding: 4,
@@ -185,7 +187,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: WHITE,
   },
   headerSpacer: {
     width: 32,
@@ -196,12 +198,12 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   infoCard: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 12,
     padding: 16,
     marginBottom: 24,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: BORDER_GRAY,
   },
   infoRow: {
     flexDirection: 'row',
@@ -213,12 +215,12 @@ const styles = StyleSheet.create({
   },
   infoLabel: {
     fontSize: 12,
-    color: '#666',
+    color: TEXT_GRAY,
     marginBottom: 4,
   },
   infoValue: {
     fontSize: 16,
-    color: '#000',
+    color: BLACK,
     fontWeight: '500',
   },
   section: {
@@ -227,16 +229,16 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: BLACK,
     marginBottom: 16,
   },
   uploadCard: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: BORDER_GRAY,
   },
   uploadHeader: {
     flexDirection: 'row',
@@ -250,12 +252,12 @@ const styles = StyleSheet.create({
   uploadType: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#000',
+    color: BLACK,
     marginLeft: 8,
   },
   uploadDate: {
     fontSize: 12,
-    color: '#666',
+    color: TEXT_GRAY,
   },
   violationCard: {
     backgroundColor: '#fff8e1',
@@ -278,16 +280,16 @@ const styles = StyleSheet.create({
   violationType: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#000',
+    color: BLACK,
     marginLeft: 8,
   },
   violationDate: {
     fontSize: 12,
-    color: '#666',
+    color: TEXT_GRAY,
   },
   violationDescription: {
     fontSize: 14,
-    color: '#333',
+    color: CHARCOAL_GRAY,
     lineHeight: 20,
     marginBottom: 8,
   },
@@ -298,7 +300,7 @@ const styles = StyleSheet.create({
   },
   mediaCount: {
     fontSize: 12,
-    color: '#666',
+    color: TEXT_GRAY,
     marginLeft: 6,
   },
   emptyState: {
@@ -308,7 +310,7 @@ const styles = StyleSheet.create({
   },
   emptyStateText: {
     fontSize: 16,
-    color: '#999',
+    color: TEXT_GRAY,
     marginTop: 16,
   },
   errorContainer: {
@@ -319,17 +321,17 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 18,
-    color: '#666',
+    color: TEXT_GRAY,
     marginBottom: 20,
   },
   backButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 8,
   },
   backButtonText: {
-    color: '#fff',
+    color: WHITE,
     fontSize: 16,
     fontWeight: '600',
   },

@@ -1,15 +1,16 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
 } from 'react-native';
+import { BLACK, BORDER_GRAY, CHARCOAL_GRAY, LIGHT_GRAY, PRIMARY_RED, TEXT_GRAY, WHITE } from '../constants/Colors';
 
 interface PastReport {
   id: string;
@@ -45,13 +46,13 @@ const mockPastReports: PastReport[] = [
 const getStatusColor = (status: string) => {
   switch (status) {
     case 'resolved':
-      return '#4CAF50';
+      return PRIMARY_RED;
     case 'pending':
       return '#FF9800';
     case 'in-progress':
       return '#2196F3';
     default:
-      return '#666666';
+      return TEXT_GRAY;
   }
 };
 
@@ -74,12 +75,12 @@ export default function ReportIssueScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      <StatusBar barStyle="light-content" backgroundColor={BLACK} />
       
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.backButton}>
-          <Ionicons name="chevron-back" size={24} color="#000" />
+          <Ionicons name="chevron-back" size={24} color={WHITE} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Report Issue</Text>
         <View style={styles.headerSpacer} />
@@ -170,11 +171,11 @@ export default function ReportIssueScreen() {
               {/* Report Footer */}
               <View style={styles.reportFooter}>
                 <TouchableOpacity style={styles.actionButton}>
-                  <Ionicons name="eye" size={16} color="#4CAF50" />
+                  <Ionicons name="eye" size={16} color={PRIMARY_RED} />
                   <Text style={styles.actionButtonText}>View Details</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.actionButton}>
-                  <Ionicons name="share" size={16} color="#666" />
+                  <Ionicons name="share" size={16} color={TEXT_GRAY} />
                   <Text style={styles.actionButtonText}>Share</Text>
                 </TouchableOpacity>
               </View>
@@ -189,7 +190,7 @@ export default function ReportIssueScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
   },
   header: {
     flexDirection: 'row',
@@ -198,7 +199,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: BORDER_GRAY,
+    backgroundColor: BLACK,
   },
   backButton: {
     padding: 4,
@@ -206,7 +208,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: WHITE,
   },
   headerSpacer: {
     width: 32,
@@ -221,13 +223,13 @@ const styles = StyleSheet.create({
   },
   fieldLabel: {
     fontSize: 12,
-    color: '#666',
+    color: TEXT_GRAY,
     marginBottom: 8,
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
@@ -236,12 +238,12 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     fontWeight: '600',
-    color: '#000',
+    color: BLACK,
   },
   mediaContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
@@ -252,20 +254,20 @@ const styles = StyleSheet.create({
   mediaText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#000',
+    color: BLACK,
   },
   mediaSubtext: {
     fontSize: 12,
-    color: '#666',
+    color: TEXT_GRAY,
     marginTop: 2,
   },
   descriptionInput: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
     fontSize: 16,
-    color: '#000',
+    color: BLACK,
     minHeight: 100,
   },
   buttonContainer: {
@@ -276,25 +278,25 @@ const styles = StyleSheet.create({
   },
   cancelButton: {
     flex: 1,
-    backgroundColor: '#666',
+    backgroundColor: TEXT_GRAY,
     borderRadius: 8,
     paddingVertical: 12,
     alignItems: 'center',
   },
   cancelButtonText: {
-    color: '#fff',
+    color: WHITE,
     fontSize: 16,
     fontWeight: '600',
   },
   submitButton: {
     flex: 1,
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
     borderRadius: 8,
     paddingVertical: 12,
     alignItems: 'center',
   },
   submitButtonText: {
-    color: '#fff',
+    color: WHITE,
     fontSize: 16,
     fontWeight: '600',
   },
@@ -302,21 +304,21 @@ const styles = StyleSheet.create({
     marginTop: 30,
     paddingTop: 20,
     borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
+    borderTopColor: BORDER_GRAY,
   },
   pastReportsTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: CHARCOAL_GRAY,
     marginBottom: 16,
   },
   reportCard: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: LIGHT_GRAY,
     borderRadius: 12,
     padding: 16,
     marginBottom: 16,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: BORDER_GRAY,
   },
   reportHeader: {
     flexDirection: 'row',
@@ -330,12 +332,12 @@ const styles = StyleSheet.create({
   issueType: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: CHARCOAL_GRAY,
     marginBottom: 4,
   },
   reportDate: {
     fontSize: 14,
-    color: '#666',
+    color: TEXT_GRAY,
   },
   statusBadge: {
     flexDirection: 'row',
@@ -356,12 +358,12 @@ const styles = StyleSheet.create({
   },
   locationText: {
     fontSize: 14,
-    color: '#666',
+    color: TEXT_GRAY,
     marginLeft: 6,
   },
   description: {
     fontSize: 14,
-    color: '#333',
+    color: CHARCOAL_GRAY,
     lineHeight: 20,
     marginBottom: 16,
   },
@@ -370,7 +372,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 12,
     borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
+    borderTopColor: BORDER_GRAY,
   },
   actionButton: {
     flexDirection: 'row',
@@ -380,7 +382,7 @@ const styles = StyleSheet.create({
   },
   actionButtonText: {
     fontSize: 14,
-    color: '#666',
+    color: TEXT_GRAY,
     marginLeft: 6,
   },
 });

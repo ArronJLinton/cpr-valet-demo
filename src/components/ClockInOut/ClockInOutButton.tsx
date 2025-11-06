@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { TimeEntry } from '../../types';
+import { PRIMARY_RED, BLACK, WHITE } from '../../../constants/Colors';
 
 interface ClockInOutButtonProps {
   timeEntry?: TimeEntry;
@@ -16,7 +17,7 @@ export const ClockInOutButton: React.FC<ClockInOutButtonProps> = ({
 }) => {
   const isClockedIn = timeEntry?.isClockedIn || false;
   const buttonText = isClockedIn ? 'Clocked In' : 'Clock-In';
-  const buttonColor = isClockedIn ? '#4CAF50' : '#F44336';
+  const buttonColor = PRIMARY_RED;
   const iconName = isClockedIn ? 'checkmark-circle' : 'time';
 
   return (
@@ -27,7 +28,7 @@ export const ClockInOutButton: React.FC<ClockInOutButtonProps> = ({
       activeOpacity={0.8}
     >
       <View style={styles.buttonContent}>
-        <Ionicons name={iconName} size={24} color='#ffffff' style={styles.icon} />
+        <Ionicons name={iconName} size={24} color={WHITE} style={styles.icon} />
         <Text style={styles.buttonText}>{buttonText}</Text>
       </View>
     </TouchableOpacity>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     minWidth: 140,
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: BLACK,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   buttonText: {
-    color: '#ffffff',
+    color: WHITE,
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',

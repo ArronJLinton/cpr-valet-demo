@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { CameraButton } from '../MediaUpload/CameraButton';
+import { PRIMARY_RED, BLACK, WHITE, TEXT_GRAY, BORDER_GRAY, LIGHT_GRAY, CHARCOAL_GRAY } from '../../../constants/Colors';
 
 interface ViolationFormProps {
   onSubmit: (violation: any) => void;
@@ -55,7 +56,7 @@ export const ViolationForm: React.FC<ViolationFormProps> = ({ onSubmit, onCancel
               <Ionicons
                 name={type.icon as keyof typeof Ionicons.glyphMap}
                 size={24}
-                color={selectedType === type.id ? '#ffffff' : '#4CAF50'}
+                color={selectedType === type.id ? WHITE : PRIMARY_RED}
               />
               <Text
                 style={[
@@ -112,28 +113,28 @@ export const ViolationForm: React.FC<ViolationFormProps> = ({ onSubmit, onCancel
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
   },
   header: {
     padding: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: BORDER_GRAY,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
     textAlign: 'center',
   },
   section: {
     padding: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: BORDER_GRAY,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#333333',
+    color: CHARCOAL_GRAY,
     marginBottom: 16,
   },
   typeGrid: {
@@ -143,34 +144,34 @@ const styles = StyleSheet.create({
   },
   typeButton: {
     width: '48%',
-    backgroundColor: '#ffffff',
+    backgroundColor: WHITE,
     borderWidth: 2,
-    borderColor: '#4CAF50',
+    borderColor: PRIMARY_RED,
     borderRadius: 12,
     padding: 16,
     alignItems: 'center',
     marginBottom: 12,
   },
   selectedTypeButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
   },
   typeButtonText: {
-    color: '#4CAF50',
+    color: PRIMARY_RED,
     fontSize: 14,
     fontWeight: '600',
     marginTop: 8,
   },
   selectedTypeButtonText: {
-    color: '#ffffff',
+    color: WHITE,
   },
   textInput: {
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: BORDER_GRAY,
     borderRadius: 8,
     padding: 12,
     fontSize: 16,
     minHeight: 100,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: LIGHT_GRAY,
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -184,24 +185,24 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   cancelButton: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: LIGHT_GRAY,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: BORDER_GRAY,
   },
   submitButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: PRIMARY_RED,
   },
   disabledButton: {
-    backgroundColor: '#cccccc',
+    backgroundColor: TEXT_GRAY,
   },
   cancelButtonText: {
-    color: '#666666',
+    color: TEXT_GRAY,
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
   },
   submitButtonText: {
-    color: '#ffffff',
+    color: WHITE,
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
